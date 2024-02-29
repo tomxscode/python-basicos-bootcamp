@@ -3,7 +3,7 @@ def leer_archivo(nombre_archivo):
     return [i for i in archivo.read().split("\n")]
 
 lista = leer_archivo('nombres.txt')
-print("Datos en el archivo:" + str(lista))
+print(f"Datos en el archivo: {lista}")
 
 lista_numeros = leer_archivo('numeros.txt')
 print("Archivo 2 (numeros.txt)")
