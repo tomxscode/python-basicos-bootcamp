@@ -1,8 +1,6 @@
 def leer_archivo(nombre_archivo):
   with open(nombre_archivo) as archivo:
-    lista = archivo.readlines()
-    lista = [l.strip() for l in lista]
-  return lista
+    return [i for i in archivo.read().split("\n")]
 
 lista = leer_archivo('nombres.txt')
 print("Datos en el archivo:" + str(lista))
