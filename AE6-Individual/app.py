@@ -1,4 +1,4 @@
-import time
+import time, re
 
 usuarios = []
 
@@ -13,9 +13,18 @@ while True:
   if opcion == "1":
     usuarios.append([])
     edad_valida = False
+    pass_valida = False
 
     nombre = input("Ingrese su nombre: ")
-    password = input("Ingrese su contraseña: ")
+    
+    while not pass_valida:
+      password = input("Ingrese su contraseña: ")
+      # Valida que tiene minimo 8 caracteres, una mayuscula, una minuscula y un numero.
+      if re.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$", password):
+        pass_valida = True
+      else:
+        print("La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula y un número.")
+        pass_valida = False
 
     while not edad_valida:
       edad = input("Ingrese su edad: ")
